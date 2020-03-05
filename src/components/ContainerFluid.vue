@@ -15,14 +15,19 @@
 </template>
 
 <script>
-
 export default {
   components: {},
   data() {
     return {};
   },
-  mounted(){
-
+  mounted() {
+    // axios
+    //   .get("https://jsonplaceholder.typicode.com/posts")
+    //   .then(data=> console.log(data));
+    this.$http
+      .get("https://jsonplaceholder.typicode.com/posts")
+      .then(data => data.json())
+      .then(res => console.log(res));
   }
 };
 </script>
