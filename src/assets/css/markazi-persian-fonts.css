@@ -32,13 +32,3 @@
 
 
 /* iransans*/
-
-@font-face {
-    font-family: 'iran sans';
-    src: url("../fonts/IranianSans.ttf") format('ttf');
-}
-
-@font-face {
-    font-family: 'BYekan';
-    src: url("../fonts/BYekan.eot") format('eot'), url("../fonts/BYekan.ttf") format('ttf'), url("../fonts/BYekan.woff") format('woff');
-}
