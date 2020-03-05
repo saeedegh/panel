@@ -23,6 +23,6 @@ export default {
 </script>
 
 <style>
-@import '/assets/style.css';
-@import '/assets/style2.css'
+@import './assets/style.css';
+@import './assets/style2.css'
 </style>
