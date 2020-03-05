@@ -13,7 +13,7 @@ import SideBar from "./components/SideBar.vue";
 import MainPanel from "./components/MainPanel";
 
 export default {
-  name: "App",
+  
   components: {
     HelloWorld,
     SideBar,
