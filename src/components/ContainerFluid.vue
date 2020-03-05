@@ -27,7 +27,7 @@ export default {
     this.$http
       .get("https://jsonplaceholder.typicode.com/posts")
       .then(data => data.json())
-      .then(res => console.log(res));
+      .then(res => console.log(res.slice(0,10)));
   }
 };
 </script>
