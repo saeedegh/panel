@@ -48,7 +48,7 @@
             </table>
           </div>
           <div class="row text-center">
-            <div id="pagination"></div>
+            <div id="pagination">{{paginator.render()}}</div>
           </div>
         </div>
       </div>
@@ -57,29 +57,47 @@
 </template>
 
 <script>
+import  pg from "../assets/js/plugins/pagination.s.min.js";
 export default {
   components: {},
   data() {
     return {
       items: [],
-      dataLoaded: false
+      dataLoaded: false,
+      pageNo: 0,
+      paginator: pg.pagination.create("search", {
+        prelink: "/",
+        rowsPerPage: 14,
+        current:this. pageNo + 1,
+        totalResult: this.response.totalCount,
+        translator : function(str) {
+            return pg.paginationTranslations[str];
+        }
+    }),
+    response:{}
     };
   },
-  created() {
+  // computed{
+
+  // }
+  created(){
     this.dataLoaded=false;
+  },
+   mounted() { 
+    
     this.$http
       .get(
-        "http://localhost:5969/manage/poem/getPagedPoems?page=0&size=14&sortBy=_id&order=Asc"
+        `http://localhost:5969/manage/poem/getPagedPoems?page=${this.pageNo}&size=14&sortBy=_id&order=Asc`
       )
       .then(info => info.json())
       .then(response => {
+        this.response=response;
         this.items = response.items;
         console.log(this.items);
       });
       this.dataLoaded=true;
   },
-  mounted(){
-  }
+
 };
 </script>
 
