@@ -58,10 +58,12 @@ export default {
   components: {},
   data() {
     return {
-      items: []
+      items: [],
+      dataLoaded:false,
     };
   },
   mounted() {
+
     this.$http
       .get(
         "http://localhost:5969/manage/poem/getPagedPoems?page=0&size=14&sortBy=_id&order=Asc")
