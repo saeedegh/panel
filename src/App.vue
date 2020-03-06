@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style>
- /* Fonts and icons  */
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css');
 @import url('./assets/css/markazi-persian-fonts.css');
