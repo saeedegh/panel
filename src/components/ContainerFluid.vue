@@ -48,7 +48,7 @@
             </table>
           </div>
           <div class="row text-center">
-            <div id="pagination">{{paginator.render()}}</div>
+            <!-- <div id="pagination">{{paginator.render()}}</div> -->
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import  pg from "../assets/js/plugins/pagination.s.min.js";
+// import  pg from "../assets/js/plugins/pagination.s.min.js";
 export default {
   components: {},
   data() {
@@ -65,39 +65,37 @@ export default {
       items: [],
       dataLoaded: false,
       pageNo: 0,
-      paginator: pg.pagination.create("search", {
-        prelink: "/",
-        rowsPerPage: 14,
-        current:this. pageNo + 1,
-        totalResult: this.response.totalCount,
-        translator : function(str) {
-            return pg.paginationTranslations[str];
-        }
-    }),
-    response:{}
+      // paginator: pg.pagination.create("search", {
+      //   prelink: "/",
+      //   rowsPerPage: 14,
+      //   current: this.pageNo + 1,
+      //   totalResult: this.response.totalCount,
+      //   translator: function(str) {
+      //     return pg.paginationTranslations[str];
+      //   }
+      // }),
+     
+      response: {}
     };
   },
   // computed{
 
   // }
-  created(){
-    this.dataLoaded=false;
-  },
-   mounted() { 
-    
+
+  mounted() {
+    this.dataLoaded = false;
     this.$http
       .get(
         `http://localhost:5969/manage/poem/getPagedPoems?page=${this.pageNo}&size=14&sortBy=_id&order=Asc`
       )
       .then(info => info.json())
       .then(response => {
-        this.response=response;
+        this.response = response;
         this.items = response.items;
         console.log(this.items);
       });
-      this.dataLoaded=true;
-  },
-
+    this.dataLoaded = true;
+  }
 };
 </script>
 
