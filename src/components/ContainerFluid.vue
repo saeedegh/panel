@@ -9,6 +9,9 @@
           </a>
         </div>
         <div class="card-body">
+          <div v-if="!dataLoaded" id="progressEl" class="text-center">
+            <img src="../assets/img/progress.gif" alt="progressbar" height="50" width="50" />
+          </div>
           <div class="table-responsive">
             <table class="table">
               <thead class="text-primary">
@@ -59,19 +62,23 @@ export default {
   data() {
     return {
       items: [],
-      dataLoaded:false,
+      dataLoaded: false
     };
   },
-  mounted() {
-
+  created() {
+    this.dataLoaded=false;
     this.$http
       .get(
-        "http://localhost:5969/manage/poem/getPagedPoems?page=0&size=14&sortBy=_id&order=Asc")
+        "http://localhost:5969/manage/poem/getPagedPoems?page=0&size=14&sortBy=_id&order=Asc"
+      )
       .then(info => info.json())
       .then(response => {
         this.items = response.items;
         console.log(this.items);
       });
+      this.dataLoaded=true;
+  },
+  mounted(){
   }
 };
 </script>
