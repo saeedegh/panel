@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import vueResource from 'vue-resource'
-
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
 
 
@@ -9,6 +9,10 @@ import vueResource from 'vue-resource'
 
 
 Vue.use(vueResource);
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
+
+
 
 
 
