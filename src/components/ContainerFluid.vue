@@ -48,7 +48,12 @@
             </table>
           </div>
           <div class="row text-center">
-            <!-- <div id="pagination">{{paginator.render()}}</div> -->
+            <b-pagination
+              v-model="currentPage"
+              :total-rows="rows"
+              :per-page="perPage"
+              aria-controls="tbody"
+            ></b-pagination>
           </div>
         </div>
       </div>
@@ -57,30 +62,23 @@
 </template>
 
 <script>
-// import  pg from "../assets/js/plugins/pagination.s.min.js";
 export default {
   components: {},
   data() {
     return {
       items: [],
       dataLoaded: false,
-      pageNo: 0,
-      // paginator: pg.pagination.create("search", {
-      //   prelink: "/",
-      //   rowsPerPage: 14,
-      //   current: this.pageNo + 1,
-      //   totalResult: this.response.totalCount,
-      //   translator: function(str) {
-      //     return pg.paginationTranslations[str];
-      //   }
-      // }),
-     
-      response: {}
-    };
-  },
-  // computed{
+      response: {},
+      pageNo:0,
+      perPage:14,
 
-  // }
+
+    }
+  },
+  computed:{
+      rows(){ return this.response.totalCount},
+      currentPage(){ return this.pageNo +1}
+  },
 
   mounted() {
     this.dataLoaded = false;
@@ -90,11 +88,16 @@ export default {
       )
       .then(info => info.json())
       .then(response => {
-        this.response = response;
+        this.response = response; 
         this.items = response.items;
-        console.log(this.items);
+        
       });
     this.dataLoaded = true;
+    console.log(  typeof(this.pageNo));
+  
+    
+    console.log('current:' , this.currentPage);
+    
   }
 };
 </script>
