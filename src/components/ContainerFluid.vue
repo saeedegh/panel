@@ -4,8 +4,8 @@
       <div class="card">
         <div class="card-header card-header-primary pt-4">
           <h4 class="card-title">لیست اشعار</h4>
-          <a href>
-            <i class="material-icons">playlist_add</i>
+          <a href="http://localhost:5969/manage/poem/add">
+            <i class="material-icons">add</i>
           </a>
         </div>
         <div class="card-body">
