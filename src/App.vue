@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <SideBar></SideBar>
+    <MainPanel></MainPanel>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import SideBar from "./components/SideBar.vue";
+import MainPanel from "./components/MainPanel";
 
 export default {
-  name: 'App',
+  
   components: {
-    HelloWorld
+    
+    SideBar,
+    MainPanel
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css');
+@import url('./assets/css/markazi-persian-fonts.css');
+@import url('./assets/css/material-dashboard.css?v=2.1.0');
+@import url('./assets/css/material-dashboard-rtl.css?v=1.1');
+@import url('./assets/css/rtlnull.css');
+@import url('./assets/css/poemliststyle.css');
+
+
 </style>

@@ -1,0 +1,86 @@
+.card [class*="card-header-"]:not(.card-header-icon):not(.card-header-text):not(.card-header-image) {
+    display: flex;
+    justify-content: space-between;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.card-header.card-header-primary a {
+    color: white;
+}
+
+.table>thead>tr>th,
+.table>tbody>tr>th,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>tbody>tr>td,
+.table>tfoot>tr>td {
+    text-align: center;
+}
+
+.row.text-center {
+    justify-content: space-around;
+}
+
+.table thead {
+    background-color: rgb(241, 243, 245);
+}
+
+.table tr:hover {
+    background-color: rgba(150, 46, 175, .1);
+    font-weight: bold;
+}
+
+.table tr:hover .btn {
+    font-weight: bold;
+}
+
+.card-bodys .material-icons {
+    opacity: .7;
+}
+
+.card-body .material-icons:hover {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+.paginator {
+    margin-bottom: 15px;
+}
+
+.paginator a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(240, 241, 243);
+    color: black;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    margin: 0 2px;
+}
+
+.paginator a:hover {
+    color: rgb(150, 46, 175);
+    border: 1px solid rgb(150, 46, 175);
+}
+
+a.paginator-current {
+    color: white;
+    background-color: rgb(150, 46, 175);
+}
+
+#progressEl {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(250, 250, 250, .5);
+    z-index: 1000;
+}
+
+#progressEl img {
+    margin-top: 20%;
+}
